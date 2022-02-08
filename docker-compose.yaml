@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+
+  nginx:
+    env_file:
+      - ./nginx_service.env
+    image: nginx:${NGINX_IMAGE_VERSION}
+    container_name: nginx-front
+    hostname: nginx-reversal
+    volumes:
+      - type: bind
+        source: ./config/nginx/conf.d
+        target: /etc/nginx/conf.d
+    ports:
+    - ${NGINX_HOST_PORT}:${NGINX_CONTAINER_PORT}
