@@ -1,0 +1,4 @@
+# Prevent Git from including or managing the files and folders in this Docker implementation
+
+# Exclude docker secrets files
+secrets/
