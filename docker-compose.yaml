@@ -13,4 +13,4 @@ services:
         source: ./config/nginx/conf.d
         target: /etc/nginx/conf.d
     ports:
-    - ${NGINX_HOST_PORT}:${NGINX_CONTAINER_PORT}
+      - ${NGINX_HOST_PORT}:${NGINX_CONTAINER_PORT}
