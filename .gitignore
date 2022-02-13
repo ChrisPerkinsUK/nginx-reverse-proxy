@@ -2,3 +2,6 @@
 
 # Exclude docker secrets files
 secrets/
+
+# Exclude all certificates
+*.pem
