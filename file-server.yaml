@@ -2,10 +2,10 @@ services:
   file-server:
     image: nginx:${NGINX_IMAGE_VERSION}
     container_name: file-server
-    volumes:
-      - type: volume
-        source: templates
-        target: /etc/nginx/templates
+#    volumes:
+#      - type: volume
+#        source: templates
+#        target: /etc/nginx/templates
     ports:
       - ${NGINX_HOST_PORT}:${NGINX_CONTAINER_PORT}
     configs:
@@ -28,8 +28,8 @@ services:
       - NGINX_HOST=foobar.com
       - NGINX_PORT=80
 
-volumes:
-  templates:
+#volumes:
+#  templates:
 
 
 configs:
