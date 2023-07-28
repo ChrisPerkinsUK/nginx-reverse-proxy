@@ -36,6 +36,6 @@ configs:
   default-off:
     file: ./scripts/40-disable-nginx-default-conf.sh
   file-server-index:
-    file: ./html/file-serverindex.html
+    file: ./html/file-server-index.html
   file-server-301:
-    file: ./html/file-server50x.html
+    file: ./html/file-server-50x.html
