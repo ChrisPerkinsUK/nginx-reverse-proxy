@@ -1,7 +1,7 @@
 services:
-  file-server:
+  dns-server:
     image: nginx
-    container_name: file-server
+    container_name: dns-server
     volumes:
       - type: volume
         source: templates
@@ -14,12 +14,12 @@ services:
         uid: 'root'
         gid: 'root'
         mode: 0550
-      - source: file-server-index
+      - source: dns-server-index
         target: /html/index.html
         uid: '0'
         gid: '0'
         mode: 0550
-      - source: file-server-301
+      - source: dns-server-301
         target: /html/50x.html
         uid: '0'
         gid: '0'
@@ -35,7 +35,7 @@ volumes:
 configs:
   default-off:
     file: ./scripts/40-disable-nginx-default-conf.sh
-  file-server-index:
-    file: ./html/file-serverindex.html
-  file-server-301:
-    file: ./html/file-server50x.html
+  dns-server-index:
+    file: ./html/dns-server-index.html
+  dns-server-301:
+    file: ./html/dns-server-50x.html
