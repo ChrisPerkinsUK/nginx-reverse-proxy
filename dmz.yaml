@@ -1,0 +1,41 @@
+services:
+  dmz:
+    image: nginx
+    container_name: dmz
+    volumes:
+      - type: volume
+        source: templates
+        target: /etc/nginx/templates
+    ports:
+      - "80:80"
+    configs:
+      - source: default-off
+        target: /docker-entrypoint.d/40-disable-nginx-default-conf.sh
+        uid: 'root'
+        gid: 'root'
+        mode: 0550
+      - source: dmz-index
+        target: /html/index.html
+        uid: '0'
+        gid: '0'
+        mode: 0550
+      - source: dmz-301
+        target: /html/50x.html
+        uid: '0'
+        gid: '0'
+        mode: 0550
+    environment:
+      - NGINX_HOST=foobar.com
+      - NGINX_PORT=80
+
+volumes:
+  templates:
+
+
+configs:
+  default-off:
+    file: ./scripts/40-disable-nginx-default-conf.sh
+  dmz-index:
+    file: ./html/DMZ-index.html
+  dmz-301:
+    file: ./html/DMZ-50x.html
