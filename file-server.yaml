@@ -36,6 +36,6 @@ configs:
   default-off:
     file: ./scripts/40-disable-nginx-default-conf.sh
   dmz-index:
-    file: ./html/DMZ-index.html
+    file: ./html/file-server-index.html
   dmz-301:
-    file: ./html/DMZ-50x.html
+    file: ./html/file-server-50x.html
