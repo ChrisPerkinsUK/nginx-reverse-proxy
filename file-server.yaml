@@ -1,13 +1,13 @@
 services:
   file-server:
-    image: nginx
+    image: nginx:${NGINX_IMAGE_VERSION}
     container_name: file-server
     volumes:
       - type: volume
         source: templates
         target: /etc/nginx/templates
     ports:
-      - "80:80"
+      - ${NGINX_HOST_PORT}:${NGINX_CONTAINER_PORT}
     configs:
       - source: default-off
         target: /docker-entrypoint.d/40-disable-nginx-default-conf.sh
