@@ -1,7 +1,7 @@
 services:
-  dmz:
+  file-server:
     image: nginx
-    container_name: dmz
+    container_name: file-server
     volumes:
       - type: volume
         source: templates
@@ -14,12 +14,12 @@ services:
         uid: 'root'
         gid: 'root'
         mode: 0550
-      - source: dmz-index
+      - source: file-server-index
         target: /html/index.html
         uid: '0'
         gid: '0'
         mode: 0550
-      - source: dmz-301
+      - source: file-server-301
         target: /html/50x.html
         uid: '0'
         gid: '0'
@@ -35,7 +35,7 @@ volumes:
 configs:
   default-off:
     file: ./scripts/40-disable-nginx-default-conf.sh
-  dmz-index:
+  file-server-index:
     file: ./html/file-server-index.html
-  dmz-301:
+  file-server-301:
     file: ./html/file-server-50x.html
