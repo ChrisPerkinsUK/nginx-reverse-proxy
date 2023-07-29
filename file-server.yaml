@@ -2,6 +2,8 @@ services:
   file-server:
     image: nginx:${NGINX_IMAGE_VERSION}
     container_name: file-server
+    volumes:
+      - ./templates:/etc/nginx/templates
 #    volumes:
 #      - type: volume
 #        source: templates
