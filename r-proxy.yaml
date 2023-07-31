@@ -1,9 +1,9 @@
 version: '3.8'
 
 services:
-  dns-server:
+  r-proxy:
     image: nginx:${NGINX_IMAGE_VERSION}
-    container_name: dns-server
+    container_name: r-proxy
     volumes:
       - type: volume
         source: templates
@@ -11,8 +11,8 @@ services:
     ports:
       - ${NGINX_HOST_PORT}:${NGINX_CONTAINER_PORT}
     configs:
-      - source: dns-server-conf
-        target: /etc/nginx/conf.d/dns-server.conf
+      - source: r-proxy-conf
+        target: /etc/nginx/conf.d/r-proxy.conf
         uid: '0'
         gid: '0'
         mode: 0550
@@ -21,12 +21,12 @@ services:
         uid: 'root'
         gid: 'root'
         mode: 0550
-      - source: dns-server-index
+      - source: r-proxy-index
         target: /html/index.html
         uid: '0'
         gid: '0'
         mode: 0550
-      - source: dns-server-301
+      - source: r-proxy-301
         target: /html/50x.html
         uid: '0'
         gid: '0'
@@ -40,11 +40,11 @@ volumes:
 
 
 configs:
-  dns-server-conf:
-    file: ./conf.d/dns-server.conf
+  r-proxy-conf:
+    file: ./conf.d/r-proxy.conf
   default-off:
     file: ./scripts/40-disable-nginx-default-conf.sh
-  dns-server-index:
-    file: ./html/dns-server-index.html
-  dns-server-301:
-    file: ./html/dns-server-50x.html
+  r-proxy-index:
+    file: ./html/r-proxy-index.html
+  r-proxy-301:
+    file: ./html/r-proxy-50x.html
