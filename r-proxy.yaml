@@ -2,14 +2,29 @@ version: '3.8'
 
 services:
   r-proxy:
-    image: nginx:${NGINX_IMAGE_VERSION}
+    image: nginx:1.25.1
     container_name: r-proxy
     volumes:
       - type: volume
         source: templates
         target: /etc/nginx/templates
     ports:
-      - ${NGINX_HOST_PORT}:${NGINX_CONTAINER_PORT}
+      - target: 80
+        published: 80
+        protocol: tcp
+        mode: ingress
+      - target: 8080
+        published: 8080
+        protocol: tcp
+        mode: ingress
+      - target: 443
+        published: 443
+        protocol: tcp
+        mode: ingress
+      - target: 443
+        published: 443
+        protocol: udp
+        mode: ingress
     configs:
       - source: r-proxy-conf
         target: /etc/nginx/conf.d/r-proxy.conf
@@ -18,8 +33,8 @@ services:
         mode: 0550
       - source: default-off
         target: /docker-entrypoint.d/40-disable-nginx-default-conf.sh
-        uid: 'root'
-        gid: 'root'
+        uid: '0'
+        gid: '0'
         mode: 0550
       - source: r-proxy-index
         target: /html/index.html
@@ -43,7 +58,7 @@ configs:
   r-proxy-conf:
     file: ./conf.d/r-proxy.conf
   default-off:
-    file: ./scripts/40-disable-nginx-default-conf.sh
+    file: ./scripts/40-disable-nginx-default-conf.shs
   r-proxy-index:
     file: ./html/r-proxy-index.html
   r-proxy-301:
