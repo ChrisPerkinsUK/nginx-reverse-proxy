@@ -33,4 +33,16 @@ ufw allow from "${nextcloud_ip}" proto udp to any port 443
 
 ufw status numbered
 
+# Docker swarm ports
+ufw allow from "${adguard_ip}" proto tcp to any port 2377
+ufw allow from "${nextcloud_ip}" proto tcp to any port 2377
+
+ufw allow from "${adguard_ip}" proto tcp to any port 7946
+ufw allow from "${adguard_ip}" proto udp to any port 7946
+ufw allow from "${nextcloud_ip}" proto tcp to any port 7946
+ufw allow from "${nextcloud_ip}" proto udp to any port 7946
+
+ufw allow from "${adguard_ip}" proto udp to any port 4789
+ufw allow from "${nextcloud_ip}" proto udp to any port 4789
+
 exit 0

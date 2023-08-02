@@ -38,5 +38,16 @@ ufw allow from "${adguard_ip}" proto tcp to any port 8080
 ufw allow from "${adguard_ip}" proto tcp to any port 8443
 
 ufw status numbered
+# Docker swarm ports
+ufw allow from "${r_proxy_ip}" proto tcp to any port 2377
+ufw allow from "${adguard_ip}" proto tcp to any port 2377
+
+ufw allow from "${r_proxy_ip}" proto tcp to any port 7946
+ufw allow from "${r_proxy_ip}" proto udp to any port 7946
+ufw allow from "${adguard_ip}" proto tcp to any port 7946
+ufw allow from "${adguard_ip}" proto udp to any port 7946
+
+ufw allow from "${r_proxy_ip}" proto udp to any port 4789
+ufw allow from "${adguard_ip}" proto udp to any port 4789
 
 exit 0
