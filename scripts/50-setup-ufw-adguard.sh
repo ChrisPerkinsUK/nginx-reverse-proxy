@@ -10,7 +10,7 @@ ufw default deny incoming
 
 ufw default allow outgoing
 
-ufw allow openss
+ufw allow openssh
 
 ufw enable
 
