@@ -37,6 +37,6 @@ ufw allow from "${adguard_ip}" proto udp to any port 3478
 ufw allow from "${adguard_ip}" proto tcp to any port 8080
 ufw allow from "${adguard_ip}" proto tcp to any port 8443
 
-nfw status numbered
+ufw status numbered
 
 exit 0

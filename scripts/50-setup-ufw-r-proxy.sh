@@ -31,6 +31,6 @@ ufw allow from "${nextcloud_ip}" proto tcp to any port 8080
 ufw allow from "${nextcloud_ip}" proto tcp to any port 443
 ufw allow from "${nextcloud_ip}" proto udp to any port 443
 
-nfw status numbered
+ufw status numbered
 
 exit 0
