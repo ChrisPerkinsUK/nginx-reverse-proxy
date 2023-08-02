@@ -5,6 +5,9 @@
 r_proxy_ip="${1}:-127.0.0.1"
 adguard_ip="${2}:-127.0.0.3"
 
+echo "${r_proxy_ip}"
+echo "${adguard_ip}"
+
 # Adguard
 ufw default deny incoming
 

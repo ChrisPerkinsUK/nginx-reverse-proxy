@@ -5,6 +5,9 @@
 r_proxy_ip="${1}:-127.0.0.1"
 nextcloud_ip="${1}:-127.0.0.2"
 
+echo "${r_proxy_ip}"
+echo "${nextcloud_ip}"
+
 # Adguard
 ufw default deny incoming
 
