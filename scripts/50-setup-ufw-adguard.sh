@@ -2,8 +2,8 @@
 
 # Installs and configures the Uncomplicated Firewall to the Adguard Server
 
-r_proxy_ip="${1}:-127.0.0.1"
-nextcloud_ip="${1}:-127.0.0.2"
+r_proxy_ip="${1:-127.0.0.1}"
+nextcloud_ip="${1:-127.0.0.2}"
 
 echo "${r_proxy_ip}"
 echo "${nextcloud_ip}"
