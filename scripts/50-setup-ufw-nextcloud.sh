@@ -6,9 +6,9 @@ r_proxy_ip="${1}:-127.0.0.1"
 adguard_ip="${2}:-127.0.0.3"
 
 # Adguard
-ufw deny incoming
+ufw default deny incoming
 
-ufw allow outgoing
+ufw default allow outgoing
 
 ufw allow openss
 
