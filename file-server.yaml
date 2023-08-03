@@ -45,19 +45,19 @@ services:
         mode: 0550
       - source: default-off
         target: /docker-entrypoint.d/40-disable-nginx-default-conf.sh
-        uid: 'root'
-        gid: 'root'
+        uid: '0'
+        gid: '0'
         mode: 0550
       - source: file-server-index
         target: /html/index.html
         uid: '0'
         gid: '0'
-        mode: 0550
+        mode: 0554
       - source: file-server-301
         target: /html/50x.html
         uid: '0'
         gid: '0'
-        mode: 0550
+        mode: 0555
     environment:
       - NGINX_HOST=foobar.com
 
