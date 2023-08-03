@@ -35,7 +35,7 @@ services:
         target: /docker-entrypoint.d/40-disable-nginx-default-conf.sh
         uid: 'root'
         gid: 'root'
-        mode: 0550
+        mode: 550
       - source: r-proxy-index
         target: /html/index.html
         uid: '0'
