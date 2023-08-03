@@ -40,12 +40,12 @@ services:
         target: /html/index.html
         uid: '0'
         gid: '0'
-        mode: 0550
+        mode: 0554
       - source: r-proxy-301
         target: /html/50x.html
         uid: '0'
         gid: '0'
-        mode: 0550
+        mode: 0554
     environment:
       - NGINX_HOST=foobar.com
       - NGINX_PORT=80
