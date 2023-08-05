@@ -2,12 +2,8 @@ version: '3.8'
 
 services:
   dns-server:
-    image: nginx:1.25.1
-    container_name: dns-server
-    volumes:
-      - type: volume
-        source: templates
-        target: /etc/nginx/templates
+    image: adguard/adguardhome
+    container_name: adguard
     ports:
       - target: 53
         published: 53
@@ -64,6 +60,13 @@ services:
         PUBLISHED: 5443
         protocol: udp
         mode: ingress
+    volumes:
+      - type: volume
+        source: work-dir
+        target: /opt/adguardhome/work
+      - type: volume
+        source: conf-dir
+        target: /opt/adguardhome/conf
     configs:
       - source: dns-server-conf
         target: /etc/nginx/conf.d/dns-server.conf
@@ -90,8 +93,8 @@ services:
       - NGINX_PORT=80
 
 volumes:
-  templates:
-
+  work-dir:
+  conf-dir:
 
 configs:
   dns-server-conf:
