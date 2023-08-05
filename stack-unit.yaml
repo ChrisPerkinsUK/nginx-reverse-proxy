@@ -32,7 +32,7 @@ services:
         gid: '0'
         mode: 0550
       - source: default-off
-        target: /docker-entrypoint.d/40-disable-nginx-default-conf.sh
+        target: ./docker-entrypoint.d/40-disable-nginx-default-conf.sh
         uid: '0'
         gid: '0'
         mode: 0550

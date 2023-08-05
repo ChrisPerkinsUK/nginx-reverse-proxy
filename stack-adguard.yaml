@@ -98,7 +98,7 @@ configs:
   dns-server-conf:
     file: ./conf.d/dns-server.conf
   default-off:
-    file: ./scripts/40-disable-nginx-default-conf.sh
+    file: ./entrypoint.d/40-disable-nginx-default-conf.sh
   dns-server-index:
     file: ./html/dns-server-index.html
   dns-server-301:
