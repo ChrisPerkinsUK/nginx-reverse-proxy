@@ -44,7 +44,7 @@ services:
         gid: '0'
         mode: 0550
       - source: default-off
-        target: ./docker-entrypoint.d/40-disable-nginx-default-conf.sh
+        target: /docker-entrypoint.d/40-disable-nginx-default-conf.sh
         uid: '0'
         gid: '0'
         mode: 0550
@@ -69,7 +69,7 @@ configs:
   file-server-conf:
     file: ./conf.d/file-server.conf
   default-off:
-    file: ./scripts/40-disable-nginx-default-conf.sh
+    file: ./entrypoint.d/40-disable-nginx-default-conf.sh
   file-server-index:
     file: ./html/file-server-index.html
   file-server-301:
