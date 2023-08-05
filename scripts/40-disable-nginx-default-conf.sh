@@ -14,18 +14,13 @@ DEFAULT_DISABLED="${NGINX_CONFIG_DIR}/default.off"
 
 # Check if the default service configuration is enabled and disable it
 while [ -f "${DEFAULT_ENABLED}" ]; do
-
     echo "The NGINX default service configuration is enabled and active!"
     sleep 1;
-
     mv "${DEFAULT_ENABLED}" "${DEFAULT_DISABLED}"
-    exit 0;
 done
 
 while [ -f "${DEFAULT_DISABLED}" ]; do
-
     echo "The NGINX default service configuration is disabled and inactive!"
-    exit 0;
 done
 
 exit 0;
