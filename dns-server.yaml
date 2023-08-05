@@ -4,58 +4,72 @@ services:
     container_name: adguard
     ports:
       - target: 53
-        published: 53
+        host_ip: 127.0.0.1
+        published: "53"
         protocol: tcp
         mode: ingress
       - target: 53
-        published: 53
+        host_ip: 127.0.0.1
+        published: "53"
         protocol: udp
         mode: ingress
       - target: 67
-        published: 67
+        host_ip: 127.0.0.1
+        published: "67"
         protocol: udp
         mode: ingress
       - target: 1068
-        published: 68
+        host_ip: 127.0.0.1
+        published: "68"
         protocol: udp
         mode: ingress
       - target: 80
-        published: 80
+        host_ip: 127.0.0.1
+        published: "80"
         protocol: tcp
         mode: ingress
       - target: 443
-        published: 443
+        host_ip: 127.0.0.1
+        published: "443"
         protocol: tcp
         mode: ingress
       - target: 443
-        published: 443
+        host_ip: 127.0.0.1
+        published: "443"
         protocol: udp
       - target: 3000
-        PUBLISHED: 3000
+        host_ip: 127.0.0.1
+        published: "3000"
         protocol: tcp
         mode: ingress
       - target: 853
-        PUBLISHED: 853
+        host_ip: 127.0.0.1
+        published: "853"
         protocol: tcp
         mode: ingress
       - target: 853
-        PUBLISHED: 853
+        host_ip: 127.0.0.1
+        published: "853"
         protocol: udp
         mode: ingress
       - target: 784
-        PUBLISHED: 784
+        host_ip: 127.0.0.1
+        published: "784"
         protocol: udp
         mode: ingress
       - target: 8853
-        PUBLISHED: 8853
+        host_ip: 127.0.0.1
+        published: "8853"
         protocol: udp
         mode: ingress
       - target: 5443
-        PUBLISHED: 5443
+        host_ip: 127.0.0.1
+        published: "5443"
         protocol: tcp
         mode: ingress
       - target: 5443
-        PUBLISHED: 5443
+        host_ip: 127.0.0.1
+        published: "5443"
         protocol: udp
         mode: ingress
     volumes:
