@@ -15,7 +15,7 @@ ufw default allow outgoing
 
 ufw allow openssh
 
-ufw enable
+ufw --force enable
 
 ufw status numbered
 
