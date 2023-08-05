@@ -19,8 +19,8 @@ while [ -f "${DEFAULT_ENABLED}" ]; do
     mv "${DEFAULT_ENABLED}" "${DEFAULT_DISABLED}"
 done
 
-while [ -f "${DEFAULT_DISABLED}" ]; do
+if [ -f "${DEFAULT_DISABLED}" ];
+then
     echo "The NGINX default service configuration is disabled and inactive!"
-done
-
+fi
 exit 0;
