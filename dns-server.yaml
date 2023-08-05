@@ -15,7 +15,7 @@ services:
         published: 67
         protocol: udp
         mode: ingress
-      - target: 68
+      - target: 1068
         published: 68
         protocol: udp
         mode: ingress
