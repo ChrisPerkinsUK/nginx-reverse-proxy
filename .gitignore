@@ -3,6 +3,9 @@
 # Exclude InteliJ files
 .idea
 
+# Exclude Mac OS files
+.DS_Store
+
 # Exclude docker secrets files
 secrets/
 
